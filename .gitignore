@@ -1,0 +1,45 @@
+# Generated network artifacts -- all reproducible from a seed in seconds.
+# Committing them would add ~21MB to clone size for data that
+# `python scripts/generate_graph.py` rebuilds byte-identically.
+data/*.graphml
+data/network.pkl
+data/warehouse.db
+data/nodes.csv
+data/relationships.csv
+data/centrality.csv
+data/disruption_impact.csv
+data/disruption_impact_blockade.csv
+
+# Analysis outputs ARE committed -- data/analytics/*.csv and
+# data/criticality_comparison.csv. They are the findings the README cites and
+# the input the Power BI layer reads, they total under 350KB, and keeping them
+# means the results can be inspected without running the slow betweenness pass.
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Power BI
+*.pbix.bak
+~$*.pbix
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Never commit a real connection string
+.env
+*.local.ini
