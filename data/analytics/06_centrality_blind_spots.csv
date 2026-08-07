@@ -1,0 +1,41 @@
+verdict,node_name,tier_name,region_id,produces,best_centrality_rank,rank_impact,rank_gap,customer_count,failed_firms,share_of_oem_value
+UNDERRATED by centrality,Mervi Manufacturing - Malta,EMS,North America,Power module,1014,50,964,1,1,0.0053132305041309
+UNDERRATED by centrality,Halcy Specialty - Sendai,REFINED_MATERIAL,Japan,Packaging substrate,638,14,624,4,17,0.0132052473462199
+UNDERRATED by centrality,Doran Resources - Wuxi,RAW_MATERIAL,China,Crude industrial gas,628,24,604,3,14,0.0102931754110628
+UNDERRATED by centrality,Isar Materials - Icheon,REFINED_MATERIAL,Korea,Bonding wire,494,9,485,5,24,0.0141677750622003
+UNDERRATED by centrality,Cortex Materials - Leixlip,REFINED_MATERIAL,Europe,Packaging substrate,475,12,463,3,29,0.0135254720326571
+UNDERRATED by centrality,Isar Chemical - Hiroshima,REFINED_MATERIAL,Japan,Packaging substrate,439,52,387,6,11,0.0047089818942449
+UNDERRATED by centrality,Halcy Minerals - Taoyuan,RAW_MATERIAL,Taiwan,Gold,395,32,363,5,23,0.0082816905253994
+UNDERRATED by centrality,Korrin Chemical - Hiroshima,REFINED_MATERIAL,Japan,Bonding wire,304,14,290,9,17,0.0132052473462199
+UNDERRATED by centrality,Thorne Chemical - Nagano 2,REFINED_MATERIAL,Japan,Packaging substrate,284,4,280,8,25,0.023984799298129
+UNDERRATED by centrality,Jarn Electronics - Hsinchu,EMS,Taiwan,Sensor module,304,47,257,9,3,0.005661036170415
+UNDERRATED by centrality,Korrin Manufacturing - Hiroshima,EMS,Japan,Power module,267,59,208,10,3,0.0041974824977278
+UNDERRATED by centrality,Korrin Extraction - Crolles,RAW_MATERIAL,Europe,Substrate resin,234,29,205,9,12,0.0092231612688259
+UNDERRATED by centrality,Granth Specialty - Bangkok,REFINED_MATERIAL,Southeast Asia,Bonding wire,175,6,169,14,19,0.018323763127714
+UNDERRATED by centrality,Gethin Microassembly - Taichung,OSAT,Taiwan,Analog IC,193,27,166,13,14,0.0099181178532089
+UNDERRATED by centrality,Mordant Electronics - Wuxi,EMS,China,Power module,213,54,159,12,1,0.0046731725986328
+UNDERRATED by centrality,Ember Materials - Kaohsiung,REFINED_MATERIAL,Taiwan,Packaging substrate,175,22,153,14,18,0.0109864699728451
+UNDERRATED by centrality,Brant Chemical - Nagano,REFINED_MATERIAL,Japan,Process gas,174,24,150,2,13,0.0102931754110628
+UNDERRATED by centrality,Jorel Assemblies - Hsinchu,EMS,Taiwan,Power module,186,51,135,12,3,0.0050309774259011
+UNDERRATED by centrality,Zephyr Specialty - Leixlip,REFINED_MATERIAL,Europe,Bonding wire,157,32,125,15,22,0.0082816905253994
+UNDERRATED by centrality,Faryn Assemblies - Dalian,EMS,China,Sensor module,175,58,117,14,4,0.0042098565654149
+UNDERRATED by centrality,Holt Manufacturing - Penang,EMS,Southeast Asia,PCB assembly,146,39,107,16,6,0.0065398097852077
+OVERRATED by centrality,Manila Port,LOGISTICS,Southeast Asia,Freight,1,326,-325,1059,0,0.0
+OVERRATED by centrality,Incheon Air Cargo Hub,LOGISTICS,Korea,Freight,2,326,-324,840,0,0.0
+OVERRATED by centrality,Busan Port,LOGISTICS,Korea,Freight,2,326,-324,690,0,0.0
+OVERRATED by centrality,Ningbo Port,LOGISTICS,China,Freight,4,326,-322,477,0,0.0
+OVERRATED by centrality,Leipzig Air Cargo Hub,LOGISTICS,Europe,Freight,5,326,-321,397,0,0.0
+OVERRATED by centrality,Yokohama Port,LOGISTICS,Japan,Freight,6,326,-320,430,0,0.0
+OVERRATED by centrality,Qingdao Port,LOGISTICS,China,Freight,6,326,-320,342,0,0.0
+OVERRATED by centrality,Clark Air Cargo Hub,LOGISTICS,Southeast Asia,Freight,9,326,-317,322,0,0.0
+OVERRATED by centrality,Shanghai Port,LOGISTICS,China,Freight,9,326,-317,283,0,0.0
+OVERRATED by centrality,Nagoya Port,LOGISTICS,Japan,Freight,10,326,-316,283,0,0.0
+OVERRATED by centrality,Taoyuan Air Cargo Hub,LOGISTICS,Taiwan,Freight,10,326,-316,292,0,0.0
+OVERRATED by centrality,Guangzhou Air Cargo Hub,LOGISTICS,China,Freight,11,326,-315,211,0,0.0
+OVERRATED by centrality,Hamburg Port,LOGISTICS,Europe,Freight,12,326,-314,228,0,0.0
+OVERRATED by centrality,Granth Resources - Shenzhen,RAW_MATERIAL,China,Copper,15,326,-311,73,6,0.0
+OVERRATED by centrality,Taichung Port,LOGISTICS,Taiwan,Freight,16,326,-310,107,0,0.0
+OVERRATED by centrality,Rotterdam Port,LOGISTICS,Europe,Freight,17,326,-309,72,0,0.0
+OVERRATED by centrality,Valencia Port,LOGISTICS,Europe,Freight,18,326,-308,81,0,0.0
+OVERRATED by centrality,Granth Feedstock - Tainan,RAW_MATERIAL,Taiwan,Copper,20,326,-306,14,2,0.0
+OVERRATED by centrality,Isar Assembly - Wuxi,OSAT,China,Memory IC,18,242,-224,87,14,0.0005315442620306
