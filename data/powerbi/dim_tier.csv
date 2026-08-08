@@ -1,0 +1,9 @@
+﻿tier_id,tier_name,flow_order,description,tier_label
+0,RAW_MATERIAL,0,"Ore, polysilicon feedstock, crude industrial gases",Raw Material
+1,REFINED_MATERIAL,1,"Wafers, photoresist, process gases, substrates",Refined Material
+2,EQUIPMENT,2,"Lithography, etch, deposition, metrology, test handlers",Equipment
+3,FAB,3,Wafer fabrication and foundry services,Fab
+4,OSAT,4,"Outsourced assembly, packaging and test",OSAT
+5,EMS,5,Board assembly and electronic manufacturing services,EMS
+6,OEM,6,Finished goods,OEM
+99,LOGISTICS,99,Seaports and air cargo hubs,Logistics

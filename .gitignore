@@ -43,3 +43,7 @@ desktop.ini
 # Never commit a real connection string
 .env
 *.local.ini
+
+# Power BI model exports are regenerable via scripts/export_powerbi.py, but the
+# star schema is committed so the dashboard can be rebuilt from a clean clone.
+# The .pbix itself IS committed once built - it is the deliverable.
