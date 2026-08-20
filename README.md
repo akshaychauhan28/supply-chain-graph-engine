@@ -188,6 +188,28 @@ Seven analytical queries live in [`sql/`](sql/) and run unchanged on SQLite and 
 
 `07_blast_radius` is a graph traversal written in SQL. It uses `UNION` rather than `UNION ALL` (on a network this dense, revisiting each node once per path doesn't terminate) and carries an explicit depth guard — the commercial graph is acyclic and tested to stay that way, but a recursive CTE over a cyclic edge table runs forever, and a query that hangs is a worse failure than one that truncates.
 
+## The dashboard
+
+![Executive summary](docs/dashboard_1_executive.png)
+
+Four pages in Power BI, built on the star schema rather than on the query exports — so one region slicer moves every visual on every page, and the tables drill past whatever the SQL `LIMIT` happened to be.
+
+| Page | Carries | |
+|---|---|---|
+| **Executive summary** | KPI row, worst failure by tier, top-10 risk register | *above* |
+| **Risk register** | Centrality rank vs measured damage, and the 34 nodes centrality underrates | [view](docs/dashboard_2_risk_register.png) |
+| **Sole-source exposure** | Which inputs have no alternative, and which buyers are one failure from stopping | [view](docs/dashboard_3_sole_source.png) |
+| **Geographic concentration** | Tier × region matrix, trade-bloc split | [view](docs/dashboard_4_geography.png) |
+
+Nothing on the executive page mentions betweenness, PageRank, or centrality. Those live on page 2, where someone asking *how* would go looking. Page 1 answers *what* and *how much*, in dollars and days.
+
+Two modelling notes carried into the report layer:
+
+- **`BOM Lines` counts distinct (buyer, input) pairs**, via `SUMMARIZE`, not table rows. A sole-sourced input yields one row and a triple-sourced one yields three, so counting rows halves the apparent sole-sourcing rate — the same grain bug that produced 8.4% against a true 21% earlier in this project.
+- **`share_of_oem_value` is never summed.** Each value is an independent single-node failure and they overlap, so totalling them double-counts. Table totals are switched off wherever it appears.
+
+Build steps, DAX, and the model diagram are in [docs/POWERBI_GUIDE.md](docs/POWERBI_GUIDE.md).
+
 ## Running it
 
 ```bash
@@ -197,6 +219,7 @@ python scripts/generate_graph.py --seed 7    # any seed reproduces exactly
 python scripts/validate_topology.py          # fits, GOF, null-model comparison
 python scripts/analyze_network.py            # centrality + disruption simulation
 python scripts/build_warehouse.py            # star schema + all 7 SQL queries
+python scripts/export_powerbi.py             # star schema as CSVs for Power BI
 python scripts/plot_degree_distribution.py   # regenerate the figures
 python scripts/plot_criticality.py
 python -m pytest tests/ -q                   # 70 tests
@@ -235,5 +258,5 @@ tests/             structural invariants, statistics, cascades, warehouse integr
 - [x] Centrality analysis — degree, betweenness, PageRank on the physical projection
 - [x] Node-removal simulation — BOM-aware cascade, reroutable and blockade freight modes
 - [x] Star schema warehouse and analytical SQL layer (SQLite / PostgreSQL)
-- [ ] Power BI risk dashboard
+- [x] Power BI risk dashboard — four pages on the dimensional model
 - [ ] One-page executive risk brief
