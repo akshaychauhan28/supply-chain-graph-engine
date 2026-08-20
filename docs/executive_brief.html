@@ -1,0 +1,163 @@
+<title>Supply Network Risk Assessment</title>
+<style>
+  :root {
+    --ink: #14140f;
+    --ink-2: #45443f;
+    --muted: #6f6e68;
+    --rule: #d8d7cf;
+    --accent: #2a78d6;
+    --alert: #c0392b;
+    --paper: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    margin: 0;
+    padding: 40px 44px 32px;
+    max-width: 850px;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+  header { border-bottom: 2.5px solid var(--ink); padding-bottom: 10px; margin-bottom: 16px; }
+  .eyebrow {
+    font-size: 8pt; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 4px;
+  }
+  h1 { font-size: 19pt; margin: 0 0 4px; letter-spacing: -.015em; }
+  .sub { color: var(--ink-2); margin: 0; font-size: 10pt; }
+
+  .bottomline {
+    border-left: 3px solid var(--accent);
+    background: #f4f8fd;
+    padding: 11px 15px;
+    margin: 0 0 18px;
+  }
+  .bottomline p { margin: 0; font-size: 10.5pt; }
+  .bottomline strong { color: var(--accent); }
+
+  h2 {
+    font-size: 8.5pt; letter-spacing: .11em; text-transform: uppercase;
+    color: var(--muted); margin: 18px 0 8px;
+    border-bottom: 1px solid var(--rule); padding-bottom: 4px;
+  }
+
+  .finding { display: flex; gap: 13px; margin-bottom: 10px; align-items: baseline; }
+  .figure {
+    flex: 0 0 96px; text-align: right;
+    font-size: 15pt; font-weight: 650; color: var(--accent);
+    letter-spacing: -.02em; line-height: 1.1;
+  }
+  .figure.warn { color: var(--alert); }
+  .figure small { display: block; font-size: 7.5pt; font-weight: 400;
+                  color: var(--muted); letter-spacing: 0; }
+  .finding p { margin: 0; }
+  .finding b { font-weight: 600; }
+
+  ol.actions { margin: 0; padding-left: 18px; }
+  ol.actions li { margin-bottom: 7px; }
+
+  .cols { display: flex; gap: 26px; }
+  .cols > div { flex: 1; }
+
+  .note { font-size: 9pt; color: var(--ink-2); }
+  .note p { margin: 0 0 6px; }
+
+  footer {
+    margin-top: 18px; padding-top: 9px; border-top: 1px solid var(--rule);
+    font-size: 8pt; color: var(--muted); display: flex; justify-content: space-between;
+  }
+
+  @page { size: letter; margin: 0.5in; }
+  @media print {
+    body { padding: 0; max-width: none; }
+    .bottomline { background: #f4f8fd !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+
+<header>
+  <p class="eyebrow">Supply chain risk · Internal assessment</p>
+  <h1>Where the semiconductor supply network actually breaks</h1>
+  <p class="sub">Network model of 2,690 firms and 14,932 supply agreements · $1.3T of modelled annual production</p>
+</header>
+
+<div class="bottomline">
+  <p><strong>Bottom line.</strong> The network survives any single supplier failure — the worst costs 3.4% of production. But
+  <strong>the suppliers that matter are not the ones spend analysis finds</strong>, and one input line in five has no qualified
+  second source behind it.</p>
+</div>
+
+<h2>What we found</h2>
+
+<div class="finding">
+  <div class="figure">$43.6B<small>worst single failure</small></div>
+  <p><b>Three mid-chain suppliers each halt more than $36B of production.</b> A power-module assembler in the Philippines,
+  a sensor-module plant in Xi'an, and a packaging house in Xi'an. None of the three is a large supplier by spend.
+  Twenty-six suppliers in total halt more than 1% of output.</p>
+</div>
+
+<div class="finding">
+  <div class="figure warn">21%<small>of input lines</small></div>
+  <p><b>1,297 of 6,178 bill-of-material lines have exactly one qualified source.</b> Lithography equipment has no second
+  source two-thirds of the time. Requalifying a tool vendor or a photoresist takes 12&ndash;24 months, so these are not
+  positions that can be recovered inside a fiscal year.</p>
+</div>
+
+<div class="finding">
+  <div class="figure warn">580<small>days worst lead time</small></div>
+  <p><b>Fabrication plants are the most exposed buyers in the network</b> — typically six of their nine inputs sole-sourced,
+  behind lead times above 500 days. They are simultaneously the <i>least</i> damaging tier to lose, at 0.3%, because their
+  customers hold alternatives. Exposure and criticality run in opposite directions.</p>
+</div>
+
+<div class="finding">
+  <div class="figure">44 / 45<small>ports replaceable</small></div>
+  <p><b>Logistics is not the exposure it appears to be.</b> Every modelled seaport and air hub but one causes zero production
+  loss when closed, because freight reroutes through an alternative gateway within weeks. The exception is the sole
+  gateway serving Australian raw materials.</p>
+</div>
+
+<div class="finding">
+  <div class="figure">84%<small>from East Asia</small></div>
+  <p><b>Geographic concentration is the systemic risk, not any individual firm.</b> Taiwan alone holds 44% of fabrication
+  value; Taiwan and Korea together hold 69%. A regional event removes many suppliers at once, and the redundancy that
+  protects against single failures does not protect against that.</p>
+</div>
+
+<h2>Recommended actions</h2>
+<ol class="actions">
+  <li><b>Qualify second sources for the 26 suppliers above the 1% threshold.</b> That list is small enough to action this
+      year and is attached in full.</li>
+  <li><b>Prioritise by replaceability, not by spend.</b> The suppliers that appear repeatedly among the most damaging
+      failures are packaging-substrate, bonding-wire and process-gas firms — low unit cost, low total spend, and no
+      qualified alternative at the buyers that depend on them. Spend-based ranking does not surface any of them.</li>
+  <li><b>Treat regional concentration separately from supplier redundancy.</b> Dual-sourcing within Taiwan does not reduce
+      Taiwan exposure.</li>
+  <li><b>Do not spend on logistics redundancy</b> beyond the single sole-gateway route identified.</li>
+</ol>
+
+<div class="cols">
+  <div>
+    <h2>How this was measured</h2>
+    <div class="note">
+      <p>Each of 1,870 suppliers was removed from the network in turn and the consequences traced forward. A plant is
+      treated as stopped when any one of its required inputs loses every qualified supplier — not merely when it loses
+      <i>a</i> supplier.</p>
+      <p>Failures then propagate: a stopped plant's own customers are re-assessed, and so on downstream.</p>
+    </div>
+  </div>
+  <div>
+    <h2>What this does not capture</h2>
+    <div class="note">
+      <p><b>Capacity.</b> Three qualified suppliers counts as covered here. In practice it is only covered if those three
+      hold spare capacity to absorb the fourth's volume — which, in this industry, they rarely do.</p>
+      <p>This understates fabrication risk specifically, and is the first extension worth funding.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>Supply Chain Graph Engine · reproducible from seed 20260806</span>
+  <span>Synthetic network model — figures are illustrative, not operational</span>
+</footer>

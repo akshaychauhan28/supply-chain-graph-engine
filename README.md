@@ -6,7 +6,8 @@ Usually not. Procurement analysis ranks suppliers by how much you buy from them,
 
 This project models a semiconductor supply network as a directed graph and finds those nodes — the ones whose importance comes from **position**, not size.
 
-> **Status: in progress.** Generator, statistical validation, criticality analysis, and the SQL warehouse are complete. The Power BI dashboard and executive brief are not yet built.
+**Stack:** Python · NetworkX · PostgreSQL / SQLite · SQL · Power BI
+**Scale:** 2,690 firms · 14,932 supply agreements · $3.4T modelled annual flow · 70 tests
 
 ---
 
@@ -210,6 +211,12 @@ Two modelling notes carried into the report layer:
 
 Build steps, DAX, and the model diagram are in [docs/POWERBI_GUIDE.md](docs/POWERBI_GUIDE.md).
 
+## The one-page brief
+
+The dashboard is for someone who will click. [**`docs/executive_brief.html`**](docs/executive_brief.html) is for someone who won't — a single page, no centrality vocabulary, findings in dollars and days, four recommended actions, and the capacity limitation stated on the page rather than in a footnote.
+
+It closes on the action that matters most: **prioritise by replaceability, not by spend.** The suppliers that recur among the most damaging failures are packaging-substrate, bonding-wire and process-gas firms — low unit cost, low total spend, no qualified alternative. A spend-ranked supplier list surfaces none of them.
+
 ## Running it
 
 ```bash
@@ -259,4 +266,4 @@ tests/             structural invariants, statistics, cascades, warehouse integr
 - [x] Node-removal simulation — BOM-aware cascade, reroutable and blockade freight modes
 - [x] Star schema warehouse and analytical SQL layer (SQLite / PostgreSQL)
 - [x] Power BI risk dashboard — four pages on the dimensional model
-- [ ] One-page executive risk brief
+- [x] One-page executive risk brief
